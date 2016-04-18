@@ -11,15 +11,7 @@ $conn = mysql_connect(HOSTNAME,DBUSER,DBPASS,DBNAME);
 if($conn == null){
 	echo "connessione null";
 }
-/*
-$nome = 'LucaZZO';
-$cognome = 'GiacomelliSA';
-$dataNascita = '1993-04-16';
-$email = 'lucagiacomelli1604@gmail.com';
-$password = "ciaoneeee";
-$image = '';
-$codAccount = '1';
-*/
+
 
 $nome = $_POST["nome"];
 $cognome = $_POST["cognome"];

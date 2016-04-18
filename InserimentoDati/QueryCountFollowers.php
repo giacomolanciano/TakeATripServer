@@ -13,16 +13,6 @@ echo "connessione null";
 } 
 
 
-/* 
-$email = 'lucagiacomelli1604@gmail.com'; 
-
-
-
-*/ 
-
-
-//$email = 'google106655636733146200245'; 
-
 $email = $_POST["email"]; 
 
 

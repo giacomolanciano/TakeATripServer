@@ -1,9 +1,5 @@
 <?php
 
-/*
-$path = 'facebo10207401508029883/';
-$nome = 'prova.jpg';
-*/
 
 
 $path = $_POST["path"];

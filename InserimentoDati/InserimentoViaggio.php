@@ -50,13 +50,6 @@ if($conn == null){
 
 
 
-/*
-$codice = '1-aa-3';
-$nomeViaggio = 'Puglia2014';
-$email = "lucagiacomelli1604@gmail.com";
-$idFoto = '';
-
-*/
 
 $nomeViaggio = $_POST["viaggio"]; 
 $codice = gen_uuid(); 

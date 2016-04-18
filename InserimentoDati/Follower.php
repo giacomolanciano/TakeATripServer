@@ -12,9 +12,6 @@ if($conn == null){
 	echo "connessione null\n";
 }
 
-/*
-$email = 'google118018255783762108439';
-*/
 
 $email = $_POST["email"];
 

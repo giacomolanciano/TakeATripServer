@@ -13,24 +13,10 @@ echo "connessione null";
 } 
 
 
-/*
-//$destinazione = 'grecia';
-$destinazione = 'cuba';
-*/
-
 
 $destinazione = $_POST["destinazione"]; 
 
-/*
-$destinazione = 'los_angeles';
-*/
 
-
-/*
-$q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, p.email, p.nome, p.cognome
-FROM takeatrip_db.Profilo p, takeatrip_db.PartePer pp, takeatrip_db.Filtro f, takeatrip_db.Viaggio v
-WHERE f.stringa='$destinazione' and f.codiceViaggio=v.codice and pp.codiceViaggio=v.codice and pp.emailProfilo = p.email "); 
-*/
 
 
 $q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, p.email, p.nome, p.cognome, iv.urlImmagineViaggio

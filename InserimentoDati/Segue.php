@@ -13,11 +13,6 @@ if($conn == null){
 }
 
 
-/*
-$segue= 'lucagiacomelli1604@gmail.com';
-$seguito ='google106655636733146200245';
-*/
-
 /* 
 L'email di segue è colui che viene seguito da seguito!*/ 
 

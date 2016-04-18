@@ -12,10 +12,7 @@ if($conn == null){
 	echo "connessione null";
 }
 
-/*
-$email = 'lucagiacomelli1604@gmail.com';
-$codiceViaggio = 'e510ab90-a903-4606-97da-f2f58313b076';
-*/
+
 
 $email = $_POST["email"];
 $codiceViaggio = $_POST["codiceViaggio"];

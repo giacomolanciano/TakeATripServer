@@ -13,13 +13,6 @@ echo "connessione null";
 } 
 
 
- 
-//$codiceViaggio = '3d388ba1-cf7c-414b-a1ea-232f5be58155'; 
-
-
-/*
-$codiceViaggio = 'c5d7f17f-4a16-4591-9c0c-ea0e0e445756';
- */
 
 
 $codiceViaggio = $_POST["codiceViaggio"]; 

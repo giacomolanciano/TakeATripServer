@@ -12,14 +12,6 @@ if($conn == null){
 }
 
 
-/*
-$nome = '123';
-$nome2 = 'Colosseo';
-$latitudine = 35;
-$longitudine = 48;
-$codiceMeta = '3';
-*/
-
 
 
 $nome = $_POST["nome"];

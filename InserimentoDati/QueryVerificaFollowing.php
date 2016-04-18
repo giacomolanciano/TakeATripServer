@@ -13,13 +13,7 @@ echo "connessione null";
 } 
 
 
-/* 
-$email = 'lucagiacomelli1604@gmail.com'; 
-*/ 
-
-
-//$emailFollower = 'google106655636733146200245'; 
-//$emailFollowing = 'google118018255783762108439'; 
+ 
 
 $emailFollower = $_POST["emailFollower"];
 $emailFollowing = $_POST["emailFollowing"]; 

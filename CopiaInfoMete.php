@@ -2,15 +2,6 @@
 
 //mysqli_select_db();
 
-/*
-$codice = '1000501';
-$temp = '12';
-$pressione = '12';
-$umidita ='12';
-$tempMin ='12';
-$tempMax = '12';
-$vento = '12';
-*/
 
 $codice = $_POST["codice"];
 $temp = $_POST["temp"];

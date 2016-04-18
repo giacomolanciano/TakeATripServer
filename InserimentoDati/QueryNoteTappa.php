@@ -12,13 +12,6 @@ if($conn == null){
 	echo "connessione null";
 }
 
-/*
-$emailProfilo = 'google118018255783762108439';
-$codViaggio = '9637453b-b637-4ffb-e749-b1eb10d62172';
-$ordineTappa = 8;
-*/
-
-
 
 $emailProfilo = $_POST["emailProfilo"];
 $codViaggio = $_POST["codViaggio"];

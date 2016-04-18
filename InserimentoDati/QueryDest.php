@@ -12,11 +12,6 @@ if($conn == null){
 	echo "connessione null";
 }
 
-/*
-$email = 'facebo10207495202451064';
-$codiceViaggio = 'e510ab90-a903-4606-97da-f2f58313b076';
-*/
-
 
 $email = $_POST["email"];
 

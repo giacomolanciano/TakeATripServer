@@ -12,14 +12,7 @@ if($conn == null){
 	echo "connessione null";
 }
 
-/*
-$email = 'admin@takeatrip.com';
-$password = 'D6EA8F277F779E81564F91243833C9D7DA0F1212';
-*/
-/*
-$email = 'cip@ciop.com';
-$password = '382410E305C98367E39B0C35849D814313FAB4E3';
-*/
+
 
 
 $email = $_POST["email"];

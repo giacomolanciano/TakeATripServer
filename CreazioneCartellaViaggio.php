@@ -10,14 +10,6 @@ echo "connessione null";
 } 
 
 
-/* 
-$email = ''; 
-$codice = ''; 
-$codiceCartella = '123'; 
-$urlCartella = 'ciao.com'; 
-$nomeCartella = 'ciao'; 
-*/ 
-
 $email = $_POST["emailUtente"]; 
 $codice = $_POST["codiceViaggio"]; 
 $codiceCartella = $_POST["codiceCartella"]; 

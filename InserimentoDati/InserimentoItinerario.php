@@ -13,15 +13,6 @@ if($conn == null){
 
 
 
-
-/*
-$codice = ; 
-$email = ;
-$codAccount = ; 
-*/
-
-
-
 $codice = $_POST["codice"]; 
 $email = $_POST["email"];
 $codAccount = $_POST["codAccount"]; 

@@ -12,30 +12,6 @@ if($conn == null){
 }
 
 
-/*
-$conn = mysqli_connect("62.149.150.240","Sql898974","8pn1btmjjx","takeatrip_db");
-if($conn == null){
-	echo "connessione null";
-}
-*/
-
-/*
-$nome = 'Luca';
-$cognome = 'Giacomelli';
-$dataNascita = '1993-04-16';
-$email = 'lucagiacomelli161505@gmail.com';
-$password = 'ciao';
-$image = '';
-$codAccount = '0'; 
-$nazionalita= 'pippo';
-$sesso= 'pippo';
-$username= 'CipCiop';
-$lavoro= 'pippo';
-$descrizione= 'pippo';
-$tipo= 'pippo';
-
-*/
-
 $nome = $_POST["nome"];
 $cognome = $_POST["cognome"];
 $dataNascita = $_POST["dataNascita"];

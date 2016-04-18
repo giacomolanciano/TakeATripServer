@@ -10,10 +10,6 @@ echo "connessione null";
 } 
 
 
-/*
-$codice = '3d388ba1-cf7c-414b-a1ea-232f5be58155'; 
-$filtro = 'filtrogrecia'; 
-*/
 
 
 $codice = $_POST["codiceViaggio"]; 

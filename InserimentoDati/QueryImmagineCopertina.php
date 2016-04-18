@@ -14,7 +14,6 @@ echo "connessione null";
 } 
 
 
-//$email = 'google108205700469353945427'; 
 
 $email = $_POST["email"]; 
 

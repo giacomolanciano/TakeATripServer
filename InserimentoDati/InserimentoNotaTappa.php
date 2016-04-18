@@ -12,21 +12,6 @@ if($conn == null){
 }
 
 
-/*
-$ordine = 1122;
-$codiceViaggio = '3d388ba1-cf7c-414b-a1ea-232f5be58155';
-$codAccount = '0';
-$emailProfilo = 'admin@takeatrip.com';
-$data = ' ';
-$paginaDiario = 'bla bla bla bla';
-$codicePOI = '11';
-$itTappaPrecedente = NULL;
-$ordineTappaPrecedente = NULL;
-$fontePOI = 'google';
-$emailTappaPrecedente = NULL;
-*/
-
-
 
 $ordine = $_POST["ordine"];
 $codiceViaggio = $_POST["codiceViaggio"];

@@ -14,7 +14,6 @@ echo "connessione null";
 
 
 
-//$codiceViaggio = '8b9fb6fd-1fe1-4b36-f49b-9b16ae5f39f7'; 
  
 $codiceViaggio = $_POST["codice"]; 
  

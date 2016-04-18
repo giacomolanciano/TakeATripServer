@@ -11,10 +11,6 @@ if($conn == null){
 	echo "connessione null";
 }
 
-/*
-$email = 'lucagiacomelli1604@gmail.com';
-$categoria = 'Mare';
-*/
 
 $email = $_POST["email"];
 $categoria = $_POST["categoria"];

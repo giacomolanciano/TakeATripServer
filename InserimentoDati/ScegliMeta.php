@@ -3,18 +3,6 @@
 
 
 
-/*
-$email = 'lucagiacomelli1604@gmail.com';
-$nome = 'Grahamstown';
-$altitudine = '0';
-$temperatura = '289.297';
-$pressione = '1011.15';
-$umidita = '88';
-$tempMin = '289.297';
-$tempMax = '25';
-//$vento = '2.66';
-$etaMedia = '0';
-*/
 
 
 $email = $_POST["email"];
