@@ -18,18 +18,11 @@ $email = $_POST["email"];
 
 
 
-/*
+
 $q = mysql_query("SELECT pp.codiceViaggio, v.nomeViaggio, iv.urlImmagineViaggio 
 				FROM takeatrip_db.PartePer pp, takeatrip_db.Viaggio v, takeatrip_db.ImmagineViaggio iv
 				WHERE  pp.emailProfilo = '$email' and iv.ordineTappa = '0' and iv.urlImmagineViaggio <> 'null' 
 				and pp.codiceViaggio = v.codice and v.codice = iv.codiceViaggio and pp.emailProfilo = iv.emailProfilo
-				order by timestamp desc");
-*/
-
-$q = mysql_query("SELECT pp.codiceViaggio, v.nomeViaggio, v.idFotoViaggio 
-				FROM takeatrip_db.PartePer pp, takeatrip_db.Viaggio v
-				WHERE  pp.emailProfilo = '$email'
-				and pp.codiceViaggio = v.codice 
 				order by timestamp desc");
 
 
