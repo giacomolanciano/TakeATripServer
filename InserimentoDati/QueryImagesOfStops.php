@@ -16,12 +16,14 @@ echo "connessione null";
 
 
 $codiceViaggio = $_POST["codice"]; 
-$ordine = $_POST["ordine"]; 
+$ordine = $_POST["ordine"];
+$email = $_POST["email"]; 
 
 
 $q = mysql_query("SELECT iv.urlImmagineViaggio, iv.ordineTappa, iv.livelloCondivisione 
 FROM takeatrip_db.Viaggio v, takeatrip_db.ImmagineViaggio iv 
 WHERE v.codice = '$codiceViaggio' and v.codice = iv.codiceViaggio and iv.ordineTappa= '$ordine'
+and (iv.emailProfilo = '$email' or iv.livelloCondivisione = 'Public' or iv.livelloCondivisione = 'Travel')
 order by timestamp desc"); 
 
 
