@@ -9,15 +9,12 @@ if($conn == null){
 echo "connessione null"; 
 } 
 
-/*
+
 $codiceViaggio = $_POST["codice"];
 $id = $_POST["id"]; 
-*/
 
-$codiceViaggio = 'a491aee0-6d5c-45a7-db55-da802e60be18';
-$id = '123'; 
 
-$sql = "UPDATE takeatrip_db.Viaggio SET idFotoViaggio='$id' WHERE codiceViaggio = '$codiceViaggio' "; 
+$sql = "UPDATE takeatrip_db.Viaggio SET idFotoViaggio='$id' WHERE codice = '$codiceViaggio' "; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 
