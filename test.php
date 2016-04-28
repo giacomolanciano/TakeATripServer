@@ -23,7 +23,7 @@ if($conn == null){
 }
 
 
-$email = $_GET["email"];
+$email = $_POST["email"];
 
 echo $email;
 
