@@ -23,13 +23,17 @@ $ordineTappa = $_POST["ordineTappa"];
 
 $q = mysql_query("
 SELECT 
-	nota 
+    iv.nota, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
-	takeatrip_db.NotaTappa 
+    takeatrip_db.Viaggio v, takeatrip_db.NotaTappa iv 
 WHERE 
-	emailProfilo = '$emailProfilo' 
-	and codViaggio = '$codViaggio' 
-	and ordineTappa = $ordineTappa");
+    v.codice = '$codViaggio' 
+    and v.codice = iv.codViaggio 
+    and iv.ordineTappa= '$ordineTappa'
+    and (iv.emailProfilo = '$emailProfilo' 
+        or iv.livelloCondivisione = 'Public' 
+        or iv.livelloCondivisione = 'Travel')
+order by timestamp desc");
 
 
 
