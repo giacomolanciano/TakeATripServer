@@ -15,7 +15,7 @@ echo "connessione null";
 
 
  
-$codiceViaggio = $_POST["codice"]; 
+$codiceViaggio = $_GET["codice"]; 
  
 $q = mysql_query("
 SELECT 
