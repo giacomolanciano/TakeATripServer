@@ -17,10 +17,17 @@ echo "connessione null";
  
 $codiceViaggio = $_POST["codice"]; 
  
-$q = mysql_query("SELECT iv.urlImmagineViaggio, iv.ordineTappa, iv.livelloCondivisione
-FROM takeatrip_db.Viaggio v, takeatrip_db.ImmagineViaggio iv 
-WHERE    v.codice  = '$codiceViaggio' and v.codice = iv.codiceViaggio 
-order by timestamp desc"); 
+$q = mysql_query("
+SELECT 
+    iv.urlImmagineViaggio, iv.ordineTappa, iv.livelloCondivisione
+FROM
+    takeatrip_db.Viaggio v,
+    takeatrip_db.ImmagineViaggio iv
+WHERE
+    v.codice = '$codiceViaggio'
+        AND v.codice = iv.codiceViaggio
+        AND (iv.livelloCondivisione = 'Public' OR iv.livelloCondivisione = 'Travel')
+ORDER BY timestamp DESC");
 
 
 
