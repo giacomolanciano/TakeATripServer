@@ -21,7 +21,15 @@ $ordineTappa = $_POST["ordineTappa"];
 
 
 
-$q = mysql_query("SELECT nota FROM takeatrip_db.NotaTappa WHERE emailProfilo = '$emailProfilo' and codViaggio = '$codViaggio' and ordineTappa = $ordineTappa");
+$q = mysql_query("
+SELECT 
+	nota 
+FROM 
+	takeatrip_db.NotaTappa 
+WHERE 
+	emailProfilo = '$emailProfilo' 
+	and codViaggio = '$codViaggio' 
+	and ordineTappa = $ordineTappa");
 
 
 
