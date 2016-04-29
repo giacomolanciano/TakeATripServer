@@ -35,7 +35,7 @@ WHERE
         AND (nt.emailProfilo = '$emailProfilo'
             OR nt.livelloCondivisione = 'Public' 
             OR nt.livelloCondivisione = 'Travel')
-ORDER BY timestamp DESC");
+ORDER BY nt.timestamp DESC");
 
 
 
