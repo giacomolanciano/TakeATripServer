@@ -12,12 +12,12 @@ if($conn == null){
 	echo "connessione null\n";
 }
 
-//$ricerca = 'luca';
+//$ricerca = 'da';
 $ricerca = $_POST["ricerca"];
 
 
 $q = mysql_query("SELECT * FROM takeatrip_db.ImmagineProfilo ip, takeatrip_db.Profilo p2, takeatrip_db.ImmagineCopertina ic WHERE ip.emailProfilo=p2.email and ic.emailProfilo= p2.email and ip.emailProfilo in 
-(SELECT DISTINCT p.email FROM takeatrip_db.Profilo p WHERE p.nome='$ricerca' OR p.cognome='$ricerca' OR p.username='$ricerca' UNION SELECT DISTINCT pr.email FROM takeatrip_db.Profilo pr WHERE pr.nome LIKE '%$ricerca%' OR pr.cognome LIKE '%$ricerca%' OR pr.username LIKE '%$ricerca%' ) ");
+(SELECT DISTINCT p.email FROM takeatrip_db.Profilo p WHERE p.nomeCognomeUsername LIKE '%$ricerca%')");
 //$q = mysql_query("SELECT * FROM takeatrip_db.Profilo WHERE nome LIKE '%$ricerca%' OR cognome LIKE '%$ricerca%' OR username LIKE '%$ricerca%' ");
 
 

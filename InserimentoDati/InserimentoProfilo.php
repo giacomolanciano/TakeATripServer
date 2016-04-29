@@ -10,6 +10,22 @@ $conn = mysql_connect(HOSTNAME,DBUSER,DBPASS,DBNAME);
 if($conn == null){
 	echo "connessione null";
 }
+/*
+$nome = 'Giovanni';
+$cognome = 'Rossi';
+$dataNascita = '0000-00-00';
+$email = 'pp@gmail.com';
+$password ='asdf';
+$image = '';
+$codAccount = '0'; 
+$nazionalita= 'prova';
+$sesso= 'prova';
+$username= 'giova18';
+$lavoro= 'prova';
+$descrizione= 'prova';
+$tipo= 'prova';
+$nomeCognomeUsername= $nome.$cognome.$username;
+*/
 
 
 $nome = $_POST["nome"];
@@ -25,11 +41,13 @@ $username= $_POST["username"];
 $lavoro= $_POST["lavoro"];
 $descrizione= $_POST["descrizione"];
 $tipo= $_POST["tipo"];
+$nomeCognomeUsername= $nome.$cognome.$username;
 
 
 
 
-$sql = "INSERT into takeatrip_db.Profilo VALUES('$email', '$codAccount','$password','$nome', '$cognome', '$dataNascita', '$image', '$nazionalita', '$sesso', '$username', '$lavoro', '$descrizione', '$tipo')"; 
+
+$sql = "INSERT into takeatrip_db.Profilo VALUES('$email', '$codAccount','$password','$nome', '$cognome', '$dataNascita', '$image', '$nazionalita', '$sesso', '$username', '$lavoro', '$descrizione', '$tipo', '$nomeCognomeUsername')"; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 
