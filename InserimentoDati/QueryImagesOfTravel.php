@@ -14,8 +14,13 @@ echo "connessione null";
 
 
 
- 
+/*
 $codiceViaggio = $_POST["codice"]; 
+$emailProfilo = $_POST["email"]; 
+*/
+
+$codiceViaggio = $_GET["codice"]; 
+$emailProfilo = $_GET["email"];
  
 $q = mysql_query("
 SELECT 
@@ -26,7 +31,9 @@ FROM
 WHERE
     v.codice = '$codiceViaggio'
         AND v.codice = iv.codiceViaggio
-        AND (iv.livelloCondivisione = 'Public' OR iv.livelloCondivisione = 'Travel')
+        AND (iv.emailProfilo = '$emailProfilo'
+            OR iv.livelloCondivisione = 'Public' 
+            OR iv.livelloCondivisione = 'Travel')
 ORDER BY timestamp DESC");
 
 
