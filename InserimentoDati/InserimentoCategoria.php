@@ -5,7 +5,7 @@
 define('__ROOT__', dirname(dirname(dirname(__FILE__)))); 
 require_once(__ROOT__.'/takeatrip_db_config.php');
 
-$conn = mysql_connect(HOSTNAME,DBUSER,DBPASS,DBNAME);
+$conn = mysqli_connect(HOSTNAME,DBUSER,DBPASS,DBNAME);
 
 if($conn == null){
 	echo "connessione null";
