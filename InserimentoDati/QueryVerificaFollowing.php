@@ -12,17 +12,16 @@ if($conn == null){
 echo "connessione null"; 
 } 
 
+/*
+$emailSeguace= "google106655636733146200245";
+$emailSeguito = "google108205700469353945427";
+*/
 
- 
-
-$emailFollower = $_POST["emailFollower"];
-$emailFollowing = $_POST["emailFollowing"]; 
+$emailSeguito = $_POST["emailSeguito"];
+$emailSeguace = $_POST["emailSeguace"]; 
 
 
-
-
-
-$q = mysql_query("SELECT * FROM takeatrip_db.Following WHERE Following.seguito = '$emailFollowing' and Following.segue = '$emailFollower' "); 
+$q = mysql_query("SELECT * FROM takeatrip_db.Following WHERE Following.seguace = '$emailSeguace' and Following.seguito = '$emailSeguito' "); 
 
 
 

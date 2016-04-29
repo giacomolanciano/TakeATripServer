@@ -12,21 +12,19 @@ if($conn == null){
 echo "connessione null"; 
 } 
 
+//$email = "google106655636733146200245"; 
+
 
 $email = $_POST["email"]; 
 
 
-
-
-
-$q = mysql_query("SELECT count(*) FROM takeatrip_db.Following WHERE Following.segue = '$email' "); 
-
+$q = mysql_query("SELECT count(*) FROM takeatrip_db.Following WHERE Following.seguace = '$email' "); 
 
 
 
 if($q==null){ 
 echo("variabile nulla"); 
-} 
+}
 
 while($e=mysql_fetch_assoc($q)){ 
 $output[]=$e; 

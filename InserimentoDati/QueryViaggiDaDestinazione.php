@@ -13,18 +13,20 @@ echo "connessione null";
 } 
 
 
-
 $destinazione = $_POST["destinazione"]; 
 
+//$destinazione = 'grecia'; 
+
+$q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, v.idFotoViaggio, p.email, p.nome, p.cognome
+FROM takeatrip_db.Profilo p, takeatrip_db.PartePer pp, takeatrip_db.Viaggio v, takeatrip_db.Filtro f
+WHERE v.codice = f.codiceViaggio and pp.emailProfilo = p.email and f.stringa = '$destinazione' and pp.codiceViaggio=v.codice");
 
 
-
-$q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, p.email, p.nome, p.cognome, iv.urlImmagineViaggio
-FROM takeatrip_db.Profilo p, takeatrip_db.PartePer pp,  takeatrip_db.Viaggio v, takeatrip_db.ImmagineViaggio iv
-WHERE pp.codiceViaggio=v.codice and pp.emailProfilo = p.email and iv.codiceViaggio = v.codice and iv.emailProfilo = p.email and iv.ordineTappa = '0' and v.codice in
- (SELECT  distinct f.codiceViaggio FROM takeatrip_db.Filtro f 
-WHERE f.stringa='$destinazione') 
-order by v.timestamp desc");
+/*$q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, p.email, p.nome, p.cognome, v.idFotoViaggio
+FROM takeatrip_db.Profilo p, takeatrip_db.PartePer pp,  takeatrip_db.Viaggio v, takeatrip_db.Filtro f 
+WHERE pp.codiceViaggio=v.codice and pp.emailProfilo = p.email and iv.codiceViaggio = v.codice and iv.emailProfilo = p.email and v.codice = f.codiceViaggio and
+f.stringa='$destinazione'
+order by v.timestamp desc");*/
 
 
  

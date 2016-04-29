@@ -15,12 +15,11 @@ if($conn == null){
 
 $email = $_POST["email"];
 
+//$email = 'facebo10207401508029883';
 
 
-
-
-$q = mysql_query("SELECT * FROM takeatrip_db.Tappa t, takeatrip_db.Viaggio v, takeatrip_db.ImmagineViaggio iv
-				WHERE  t.emailProfilo = '$email' AND t.ordine = '1' AND v.codice = t.codiceViaggio AND iv.codiceViaggio = v.codice
+$q = mysql_query("SELECT * FROM takeatrip_db.Tappa t, takeatrip_db.Viaggio v
+				WHERE  t.emailProfilo = '$email' AND t.ordine = '1' AND v.codice = t.codiceViaggio
 order by t.ordine
 ");
 
