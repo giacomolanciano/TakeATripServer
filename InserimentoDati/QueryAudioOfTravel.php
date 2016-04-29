@@ -15,13 +15,13 @@ echo "connessione null";
 
 
  
-/*
 $codiceViaggio = $_POST["codice"]; 
 $emailProfilo = $_POST["email"]; 
-*/
 
+/*
 $codiceViaggio = $_GET["codice"]; 
-$emailProfilo = $_GET["email"]; 
+$emailProfilo = $_GET["email"];
+*/ 
  
 $q = mysql_query("
 SELECT 

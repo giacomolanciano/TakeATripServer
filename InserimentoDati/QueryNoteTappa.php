@@ -12,15 +12,16 @@ if($conn == null){
 	echo "connessione null";
 }
 
-/*
+
 $emailProfilo = $_POST["emailProfilo"];
 $codViaggio = $_POST["codViaggio"];
 $ordineTappa = $_POST["ordineTappa"];
-*/
 
+/*
 $emailProfilo = $_GET["emailProfilo"];
 $codViaggio = $_GET["codViaggio"];
 $ordineTappa = $_GET["ordineTappa"];
+*/
 
 
 
