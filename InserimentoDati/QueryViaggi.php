@@ -26,7 +26,7 @@ $q = mysql_query("SELECT pp.codiceViaggio, v.nomeViaggio, iv.urlImmagineViaggio
 				order by timestamp desc");
 */
 
-$q = mysql_query("SELECT pp.codiceViaggio, v.nomeViaggio, v.idFotoViaggio 
+$q = mysql_query("SELECT pp.codiceViaggio, v.nomeViaggio, v.idFotoViaggio, v.livelloCondivisione
 				FROM takeatrip_db.PartePer pp, takeatrip_db.Viaggio v
 				WHERE  pp.emailProfilo = '$email'
 				and pp.codiceViaggio = v.codice 

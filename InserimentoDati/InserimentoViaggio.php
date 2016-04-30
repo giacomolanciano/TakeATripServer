@@ -54,10 +54,11 @@ if($conn == null){
 $nomeViaggio = $_POST["viaggio"]; 
 $codice = gen_uuid(); 
 $idFoto = '';
+$livelloDefault = 'public';
 $timestamp = $_POST["timestamp"];
 
 
-$sql = "INSERT into takeatrip_db.Viaggio VALUES('$codice', '$nomeViaggio', '$idFoto', null)";
+$sql = "INSERT into takeatrip_db.Viaggio VALUES('$codice', '$nomeViaggio', '$idFoto', null, '$livelloDefault')";
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 
