@@ -13,13 +13,13 @@ if($conn == null){
 }
 
 
-$emailProfilo = $_POST["emailProfilo"];
-$codViaggio = $_POST["codViaggio"];
+$emailProfilo = $_POST["email"];
+$codViaggio = $_POST["codice"];
 $ordineTappa = $_POST["ordineTappa"];
 
 /*
-$emailProfilo = $_GET["emailProfilo"];
-$codViaggio = $_GET["codViaggio"];
+$emailProfilo = $_POST["email"];
+$codViaggio = $_POST["codice"];
 $ordineTappa = $_GET["ordineTappa"];
 */
 
