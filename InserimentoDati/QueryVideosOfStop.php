@@ -18,8 +18,8 @@ $codViaggio = $_POST["codice"];
 $ordineTappa = $_POST["ordineTappa"];
 
 /*
-$emailProfilo = $_POST["email"];
-$codViaggio = $_POST["codice"];
+$emailProfilo = $_GET["email"];
+$codViaggio = $_GET["codice"];
 $ordineTappa = $_GET["ordineTappa"];
 */
 
