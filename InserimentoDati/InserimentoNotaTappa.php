@@ -12,22 +12,22 @@ if($conn == null){
 }
 
 
-/*
+
 $ordine = $_POST["ordine"];
 $codiceViaggio = $_POST["codiceViaggio"];
 $emailProfilo = $_POST["emailProfilo"];
 $timestamp = $_POST["timestamp"];
 $nota = $_POST["nota"];
 $livelloCondivisione = $_POST["livelloCondivisione"]
-*/
 
+/*
 $ordine = $_GET["ordine"];
 $codiceViaggio = $_GET["codiceViaggio"];
 $emailProfilo = $_GET["emailProfilo"];
 $timestamp = $_GET["timestamp"];
 $nota = $_GET["nota"];
 $livelloCondivisione = $_GET["livelloCondivisione"]
-
+*/
 
 $sql = "INSERT into takeatrip_db.NotaTappa VALUES('$emailProfilo', '$codiceViaggio', '$ordine', '$timestamp', '$nota', '$livelloCondivisione')"; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
