@@ -1,4 +1,5 @@
 *.log
 build/
 temp-*
-logodef.png
+*.png
+*.jpg
