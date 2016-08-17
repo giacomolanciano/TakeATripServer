@@ -14,7 +14,6 @@ if($conn == null){
 
 
 $codiceViaggio = $_POST["codiceViaggio"];
-$ordineTappa = $_POST["ordineTappa"];
 $nota = $_POST["nota"];
 
 
@@ -22,7 +21,6 @@ $q = mysql_query("
 DELETE FROM takeatrip_db.NotaTappa 
 WHERE
     codViaggio = '$codiceViaggio'
-    AND ordineTappa = '$ordineTappa'
     AND nota = '$nota';");
 
 
