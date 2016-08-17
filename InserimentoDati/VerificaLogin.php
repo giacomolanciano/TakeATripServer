@@ -13,8 +13,8 @@ if($conn == null){
 }
 
 
-
-
+//$email = 'google106655636733146200245';
+//$password = 'pwdGoogle';
 $email = $_POST["email"];
 $password = $_POST["password"];
 
@@ -22,11 +22,9 @@ $password = $_POST["password"];
 $q = mysql_query("SELECT * FROM takeatrip_db.Profilo 
 				WHERE  email = '$email'
 				and password = '$password'");
-
-				
 				
 if($q==null){
-	echo("variabile nulla");
+	echo("variabile nulla".mysql_error());
 }
 
 while($e=mysql_fetch_assoc($q)){
