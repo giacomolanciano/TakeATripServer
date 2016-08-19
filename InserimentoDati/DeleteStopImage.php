@@ -32,16 +32,7 @@ while($e=mysql_fetch_assoc($q)){
         $output[]=$e;
 }
 
-
-if($output != null){
-	print(json_encode($output));
-}
-else{
-	print(json_encode($output));
-}
-
-
-
+print(json_encode($output));
 
 mysql_close($conn);
 ?>
