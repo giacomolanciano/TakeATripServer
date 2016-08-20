@@ -20,7 +20,7 @@ $nota = $_POST["nota"];
 $livelloCondivisione = $_POST["livelloCondivisione"]
 
 
-$sql = "INSERT into takeatrip_db.NotaTappa VALUES('$emailProfilo', '$codiceViaggio', '$ordine', '$timestamp', '$nota', '$livelloCondivisione')"; 
+$sql = "INSERT INTO takeatrip_db.NotaTappa VALUES('$emailProfilo','$codiceViaggio','$ordine','$timestamp','$nota','$livelloCondivisione');"; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 echo "OK"; 
