@@ -14,30 +14,32 @@ echo "connessione null";
 
 
 
- 
+
 $codiceViaggio = $_POST["codice"]; 
 $emailProfilo = $_POST["email"]; 
 
+
 /*
-$codiceViaggio = $_GET["codice"]; 
-$emailProfilo = $_GET["email"];
-*/ 
+$codiceViaggio = 'cdfa1bda-1615-4ab1-83b9-f7f9c666bd1a'; 
+$emailProfilo = 'google108180077738116663863';
+*/
+
  
 $q = mysql_query("
 SELECT 
-    nt.nota, nt.ordineTappa, nt.livelloCondivisione
+    nt.nota, p.email, p.username, nt.ordineTappa, nt.livelloCondivisione
 FROM
     takeatrip_db.Viaggio v,
-    takeatrip_db.NotaTappa nt
+    takeatrip_db.NotaTappa nt,
+    takeatrip_db.Profilo p
 WHERE
     v.codice = '$codiceViaggio'
         AND v.codice = nt.codViaggio
+        AND nt.emailProfilo = p.email
         AND (nt.emailProfilo = '$emailProfilo'
             OR nt.livelloCondivisione = 'Public' 
             OR nt.livelloCondivisione = 'Travel')
 ORDER BY nt.timestamp DESC");
-
-
 
 
 if($q==null){ 
@@ -55,9 +57,6 @@ print(json_encode($output));
 else{ 
 print(json_encode($output)); 
 } 
-
-
-
 
 mysql_close($conn); 
 ?>

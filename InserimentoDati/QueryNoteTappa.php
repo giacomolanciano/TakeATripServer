@@ -27,13 +27,14 @@ $ordineTappa = $_GET["ordineTappa"];
 
 $q = mysql_query("
 SELECT 
-    iv.nota, iv.ordineTappa, iv.livelloCondivisione 
+    iv.nota, p.email, p.username, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
-    takeatrip_db.Viaggio v, takeatrip_db.NotaTappa iv 
+    takeatrip_db.Viaggio v, takeatrip_db.NotaTappa iv , takeatrip_db.Profilo p
 WHERE 
     v.codice = '$codViaggio' 
     and v.codice = iv.codViaggio 
     and iv.ordineTappa= '$ordineTappa'
+    and iv.emailProfilo = p.email
     and (iv.emailProfilo = '$emailProfilo' 
         or iv.livelloCondivisione = 'Public' 
         or iv.livelloCondivisione = 'Travel')

@@ -15,12 +15,14 @@ if($conn == null){
 
 $codiceViaggio = $_POST["codiceViaggio"];
 $nota = $_POST["nota"];
+$email = $_POST["emailProfilo"];
 
 
 $q = mysql_query("
 DELETE FROM takeatrip_db.NotaTappa 
 WHERE
-    codViaggio = '$codiceViaggio'
+	emailProfilo = '$email'
+    AND codViaggio = '$codiceViaggio'
     AND nota = '$nota';");
 
 
