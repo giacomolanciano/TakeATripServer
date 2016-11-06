@@ -17,7 +17,7 @@ $ordine = $_POST["ordine"];
 $codiceViaggio = $_POST["codiceViaggio"];
 $emailProfilo = $_POST["emailProfilo"];
 $data = $_POST["data"];
-$paginaDiario = $_POST["paginaDiario"];
+$nomeTappa = $_POST["nome"];
 $codicePOI = $_POST["POI"];
 $itTappaPrecedente = NULL;
 $ordineTappaPrecedente = NULL;
@@ -26,7 +26,7 @@ $codAccount = '0';
 $fontePOI = 'google';
 
 
-$sql = "INSERT into takeatrip_db.Tappa VALUES('$emailProfilo', '$codiceViaggio', '$ordine', '$codAccount', '$data', ' $paginaDiario','$codicePOI','$codicePOI','$itTappaPrecedente','$ordineTappaPrecedente', '$emailTappaPrecedente')"; 
+$sql = "INSERT into takeatrip_db.Tappa VALUES('$emailProfilo', '$codiceViaggio', '$ordine', '$codAccount', '$data', '$nomeTappa','$codicePOI','$codicePOI','$itTappaPrecedente','$ordineTappaPrecedente', '$emailTappaPrecedente')"; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 

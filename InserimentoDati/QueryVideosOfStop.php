@@ -29,9 +29,9 @@ $ordineTappa = $_GET["ordineTappa"];
 
 $q = mysql_query("
 SELECT 
-    iv.urlVideo, iv.ordineTappa, iv.livelloCondivisione 
+    iv.emailProfilo, iv.urlVideo, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
-    takeatrip_db.Viaggio v, takeatrip_db.VideoViaggio iv 
+    takeatrip_db.Viaggio v, takeatrip_db.VideoViaggio iv
 WHERE 
     v.codice = '$codViaggio' 
     and v.codice = iv.codiceViaggio 

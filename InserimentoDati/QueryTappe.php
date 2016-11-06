@@ -19,25 +19,17 @@ $codiceViaggio = $_POST["codiceViaggio"];
 
 
 
-
-
 $q = mysql_query("SELECT *
 				FROM takeatrip_db.Tappa
 				WHERE  emailProfilo = '$email'
-				and codiceViaggio = '$codiceViaggio' order by ordine asc
-");
-
-
-				
-				
+				and codiceViaggio = '$codiceViaggio' order by ordine asc");
 if($q==null){
 	echo("variabile nulla");
 }
 
 while($e=mysql_fetch_assoc($q)){
-        $output[]=$e;
+    $output[]=$e;
 }
-
 
 if($output != null){
 	print(json_encode($output));

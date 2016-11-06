@@ -29,7 +29,7 @@ $ordineTappa = $_GET["ordineTappa"];
 
 $q = mysql_query("
 SELECT 
-    iv.urlAudio, iv.ordineTappa, iv.livelloCondivisione 
+    iv.emailProfilo, iv.urlAudio, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
     takeatrip_db.Viaggio v, takeatrip_db.AudioViaggio iv 
 WHERE 

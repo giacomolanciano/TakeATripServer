@@ -25,7 +25,7 @@ $emailProfilo = $_GET["email"];
  
 $q = mysql_query("
 SELECT 
-    av.urlAudio, av.ordineTappa, av.livelloCondivisione
+    av.emailProfilo, av.urlAudio, av.ordineTappa, av.livelloCondivisione
 FROM
     takeatrip_db.Viaggio v,
     takeatrip_db.AudioViaggio av
