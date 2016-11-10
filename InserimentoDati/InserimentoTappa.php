@@ -19,14 +19,14 @@ $emailProfilo = $_POST["emailProfilo"];
 $data = $_POST["data"];
 $nomeTappa = $_POST["nome"];
 $codicePOI = $_POST["POI"];
+$livelloCondivisioneTappa = $_POST['livelloCondivisioneTappa'];
 $itTappaPrecedente = NULL;
 $ordineTappaPrecedente = NULL;
-$emailTappaPrecedente = NULL;
 $codAccount = '0';
 $fontePOI = 'google';
 
 
-$sql = "INSERT into takeatrip_db.Tappa VALUES('$emailProfilo', '$codiceViaggio', '$ordine', '$codAccount', '$data', '$nomeTappa','$codicePOI','$codicePOI','$itTappaPrecedente','$ordineTappaPrecedente', '$emailTappaPrecedente')"; 
+$sql = "INSERT into takeatrip_db.Tappa VALUES('$emailProfilo', '$codiceViaggio', '$ordine', '$codAccount', '$data', '$nomeTappa','$codicePOI','$codicePOI','$itTappaPrecedente','$ordineTappaPrecedente', '$livelloCondivisioneTappa')"; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 

@@ -24,7 +24,7 @@ $ordineTappa = $_GET["ordineTappa"];
 */
 
 
-
+mysql_set_charset("UTF8");
 $q = mysql_query("
 SELECT 
     iv.nota, p.email, p.username, iv.ordineTappa, iv.livelloCondivisione 
@@ -33,11 +33,13 @@ FROM
 WHERE 
     v.codice = '$codViaggio' 
     and v.codice = iv.codViaggio 
+    AND p.email = iv.emailProfilo
     and iv.ordineTappa= '$ordineTappa'
-    and iv.emailProfilo = p.email
-    and (iv.emailProfilo = '$emailProfilo' 
-        or iv.livelloCondivisione = 'Public' 
-        or iv.livelloCondivisione = 'Travel')
+            AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
+            OR iv.livelloCondivisione = 'Public' 
+            OR (iv.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codViaggio))
+            OR (iv.livelloCondivisione = 'Followers' AND '$emailProfilo' in (SELECT seguace FROM takeatrip_db.Following WHERE seguito=iv.emailProfilo)))
+    
 order by iv.timestamp desc");
 
 

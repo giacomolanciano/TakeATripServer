@@ -19,7 +19,8 @@ $destinazione = $_POST["destinazione"];
 
 $q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, v.idFotoViaggio, v.livelloCondivisione, p.email, p.nome, p.cognome
 FROM takeatrip_db.Profilo p, takeatrip_db.PartePer pp, takeatrip_db.Viaggio v, takeatrip_db.Filtro f
-WHERE v.codice = f.codiceViaggio and pp.emailProfilo = p.email and f.stringa = '$destinazione' and pp.codiceViaggio=v.codice");
+WHERE v.codice = f.codiceViaggio and pp.emailProfilo = p.email and f.stringa = '$destinazione' and pp.codiceViaggio=v.codice
+order by v.timestamp desc");
 
 
 /*$q = mysql_query("SELECT distinct v.codice, v.nomeViaggio, p.email, p.nome, p.cognome, v.idFotoViaggio

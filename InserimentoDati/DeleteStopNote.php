@@ -18,6 +18,7 @@ $nota = $_POST["nota"];
 $email = $_POST["emailProfilo"];
 
 
+mysql_set_charset($conn, "UTF8");
 $q = mysql_query("
 DELETE FROM takeatrip_db.NotaTappa 
 WHERE

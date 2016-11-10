@@ -32,9 +32,10 @@ FROM
 WHERE
     v.codice = '$codiceViaggio'
         AND v.codice = av.codiceViaggio
-        AND (av.emailProfilo = '$emailProfilo'
+        AND ((av.livelloCondivisione = 'Private' AND av.emailProfilo = '$emailProfilo')
             OR av.livelloCondivisione = 'Public' 
-            OR av.livelloCondivisione = 'Travel')
+            OR (av.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=av.codiceViaggio))
+            OR (av.livelloCondivisione = 'Followers' AND '$emailProfilo' in (SELECT seguace FROM takeatrip_db.Following WHERE seguito=av.emailProfilo)))
 ORDER BY timestamp DESC");
 
 

@@ -34,11 +34,12 @@ FROM
     takeatrip_db.Viaggio v, takeatrip_db.ImmagineViaggio iv 
 WHERE 
     v.codice = '$codViaggio' 
-    and v.codice = iv.codiceViaggio 
-    and iv.ordineTappa= '$ordineTappa'
-    and (iv.emailProfilo = '$emailProfilo' 
-        or iv.livelloCondivisione = 'Public' 
-        or iv.livelloCondivisione = 'Travel')
+    AND iv.ordineTappa= '$ordineTappa'
+    AND v.codice = iv.codiceViaggio
+        AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
+            OR iv.livelloCondivisione = 'Public' 
+            OR (iv.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codiceViaggio))
+            OR (iv.livelloCondivisione = 'Followers' AND '$emailProfilo' in (SELECT seguace FROM takeatrip_db.Following WHERE seguito=iv.emailProfilo)))
 order by timestamp desc");
 
 
