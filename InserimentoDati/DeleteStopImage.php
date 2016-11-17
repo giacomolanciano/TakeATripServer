@@ -27,12 +27,11 @@ WHERE
 if($q==null){
 	echo("variabile nulla");
 }
-
-while($e=mysql_fetch_assoc($q)){
-        $output[]=$e;
+else{
+	echo("OK");
 }
 
-print(json_encode($output));
+
 
 mysql_close($conn);
 ?>

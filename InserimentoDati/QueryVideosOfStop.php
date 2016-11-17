@@ -14,6 +14,7 @@ if($conn == null){
 
 
 $emailProfilo = $_POST["email"];
+$emailProprietarioTappa = $_POST["emailProprietarioTappa"];
 $codViaggio = $_POST["codice"];
 $ordineTappa = $_POST["ordineTappa"];
 
@@ -28,23 +29,21 @@ $ordineTappa = $_GET["ordineTappa"];
 
 
 $q = mysql_query("
-SELECT 
+SELECT distinct
     iv.emailProfilo, iv.urlVideo, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
-    takeatrip_db.Viaggio v, takeatrip_db.VideoViaggio iv
+    takeatrip_db.Tappa t, takeatrip_db.Viaggio v, takeatrip_db.VideoViaggio iv
 WHERE 
-    v.codice = '$codViaggio' 
-    
-    
-    AND v.codice = iv.codiceViaggio
-    AND iv.ordineTappa= '$ordineTappa'
+    t.codiceViaggio = '$codViaggio' 
+    AND v.codice = t.codiceViaggio
+    AND iv.emailProfilo = '$emailProprietarioTappa'
+    and t.codiceViaggio = iv.codiceViaggio 
+    and iv.ordineTappa= '$ordineTappa'
         AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
             OR iv.livelloCondivisione = 'Public' 
             OR (iv.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codiceViaggio))
             OR (iv.livelloCondivisione = 'Followers' AND '$emailProfilo' in (SELECT seguace FROM takeatrip_db.Following WHERE seguito=iv.emailProfilo)))
-       
 order by timestamp desc");
-
 
 
 				

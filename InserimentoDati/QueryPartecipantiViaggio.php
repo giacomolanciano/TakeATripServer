@@ -19,11 +19,9 @@ $codiceViaggio = $_POST["codiceViaggio"];
 
 
 
-
-
 $q = mysql_query("SELECT * 
 FROM takeatrip_db.PartePer pp, takeatrip_db.Profilo p, takeatrip_db.ImmagineProfilo ip, takeatrip_db.ImmagineCopertina ic
-WHERE pp.codiceViaggio = '$codiceViaggio' and pp.emailProfilo = p.email and pp.codAccount = p.codAccount and p.email = ip.emailProfilo and p.email = ic.emailProfilo"); 
+WHERE pp.codiceViaggio = '$codiceViaggio' and pp.emailProfilo = p.email and p.email = ip.emailProfilo and p.email = ic.emailProfilo"); 
 
 
 

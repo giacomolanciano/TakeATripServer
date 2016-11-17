@@ -17,7 +17,7 @@ $q = $mysqli->multi_query("
 DELETE FROM takeatrip_db.Tag 
 WHERE codiceViaggio = '$codiceViaggio';
 DELETE FROM takeatrip_db.NotaTappa 
-WHERE codViaggio = '$codiceViaggio';
+WHERE codiceViaggio = '$codiceViaggio';
 DELETE FROM takeatrip_db.ImmagineViaggio 
 WHERE codiceViaggio = '$codiceViaggio';
 DELETE FROM takeatrip_db.VideoViaggio 

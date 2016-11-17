@@ -22,7 +22,7 @@ WHERE
     AND ordineTappa = '$ordineTappa';
 DELETE FROM takeatrip_db.NotaTappa 
 WHERE
-    codViaggio = '$codiceViaggio'
+    codiceViaggio = '$codiceViaggio'
     AND ordineTappa = '$ordineTappa';
 DELETE FROM takeatrip_db.ImmagineViaggio 
 WHERE

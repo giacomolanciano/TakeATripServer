@@ -14,6 +14,7 @@ if($conn == null){
 
 
 $emailProfilo = $_POST["email"];
+$emailProprietarioTappa = $_POST["emailProprietarioTappa"];
 $codViaggio = $_POST["codice"];
 $ordineTappa = $_POST["ordineTappa"];
 
@@ -26,21 +27,21 @@ $ordineTappa = $_GET["ordineTappa"];
 
 mysql_set_charset("UTF8");
 $q = mysql_query("
-SELECT 
+SELECT distinct
     iv.nota, p.email, p.username, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
-    takeatrip_db.Viaggio v, takeatrip_db.NotaTappa iv , takeatrip_db.Profilo p
+    takeatrip_db.Tappa t, takeatrip_db.NotaTappa iv , takeatrip_db.Profilo p
 WHERE 
-    v.codice = '$codViaggio' 
-    and v.codice = iv.codViaggio 
+    t.codiceViaggio = '$codViaggio' 
     AND p.email = iv.emailProfilo
+    AND iv.emailProfilo = '$emailProprietarioTappa'
+    and t.codiceViaggio = iv.codiceViaggio 
     and iv.ordineTappa= '$ordineTappa'
-            AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
+        AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
             OR iv.livelloCondivisione = 'Public' 
-            OR (iv.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codViaggio))
+            OR (iv.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codiceViaggio))
             OR (iv.livelloCondivisione = 'Followers' AND '$emailProfilo' in (SELECT seguace FROM takeatrip_db.Following WHERE seguito=iv.emailProfilo)))
-    
-order by iv.timestamp desc");
+order by timestamp desc");
 
 
 

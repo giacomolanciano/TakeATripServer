@@ -15,6 +15,7 @@ if($conn == null){
 
 
 $emailProfilo = $_POST["email"];
+$emailProprietarioTappa = $_POST["emailProprietarioTappa"];
 $codViaggio = $_POST["codice"];
 $ordineTappa = $_POST["ordineTappa"];
 
@@ -28,13 +29,15 @@ $ordineTappa = $_GET["ordineTappa"];
 
 
 $q = mysql_query("
-SELECT 
+SELECT distinct
     iv.emailProfilo, iv.urlAudio, iv.ordineTappa, iv.livelloCondivisione 
 FROM 
-    takeatrip_db.Viaggio v, takeatrip_db.AudioViaggio iv 
+    takeatrip_db.Tappa t, takeatrip_db.Viaggio v, takeatrip_db.AudioViaggio iv 
 WHERE 
-    v.codice = '$codViaggio' 
-    and v.codice = iv.codiceViaggio 
+    t.codiceViaggio = '$codViaggio' 
+    AND v.codice = t.codiceViaggio
+    AND iv.emailProfilo = '$emailProprietarioTappa'
+    and t.codiceViaggio = iv.codiceViaggio 
     and iv.ordineTappa= '$ordineTappa'
         AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
             OR iv.livelloCondivisione = 'Public' 

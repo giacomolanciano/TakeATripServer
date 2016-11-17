@@ -34,7 +34,7 @@ $dataNascita = $_POST["dataNascita"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 $image = '';
-$codAccount = '0'; 
+$emailProfilo = $_POST["emailProfilo"]; 
 $nazionalita= $_POST["nazionalita"];
 $sesso= $_POST["sesso"];
 $username= $_POST["username"];
@@ -47,7 +47,7 @@ $nomeCognomeUsername= $nome.$cognome.$username;
 
 
 
-$sql = "INSERT into takeatrip_db.Profilo VALUES('$email', '$codAccount','$password','$nome', '$cognome', '$dataNascita', '$image', '$nazionalita', '$sesso', '$username', '$lavoro', '$descrizione', '$tipo', '$nomeCognomeUsername')"; 
+$sql = "INSERT into takeatrip_db.Profilo VALUES('$email', '$emailProfilo','$password','$nome', '$cognome', '$dataNascita', '$image', '$nazionalita', '$sesso', '$username', '$lavoro', '$descrizione', '$tipo', '$nomeCognomeUsername')"; 
 $mysql_result=mysql_query($sql,$conn) or die(mysql_error()); 
 
 

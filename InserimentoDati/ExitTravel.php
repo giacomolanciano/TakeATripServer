@@ -16,7 +16,7 @@ $codiceViaggio = $_POST["codiceViaggio"];
 
 $q = $mysqli->multi_query("
 DELETE FROM takeatrip_db.NotaTappa 
-WHERE codViaggio = '$codiceViaggio' and emailProfilo = '$emailUser';
+WHERE codiceViaggio = '$codiceViaggio' and emailProfilo = '$emailUser';
 DELETE FROM takeatrip_db.ImmagineViaggio 
 WHERE codiceViaggio = '$codiceViaggio' and emailProfilo = '$emailUser';
 DELETE FROM takeatrip_db.VideoViaggio 

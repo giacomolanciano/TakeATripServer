@@ -23,7 +23,7 @@ $q = mysql_query("
 DELETE FROM takeatrip_db.NotaTappa 
 WHERE
 	emailProfilo = '$email'
-    AND codViaggio = '$codiceViaggio'
+    AND codiceViaggio = '$codiceViaggio'
     AND nota = '$nota';");
 
 

@@ -31,7 +31,6 @@ FROM
 WHERE
     v.codice = '$codiceViaggio'
     
-    
     AND v.codice = vv.codiceViaggio
         AND ((vv.livelloCondivisione = 'Private' AND vv.emailProfilo = '$emailProfilo')
             OR vv.livelloCondivisione = 'Public' 
