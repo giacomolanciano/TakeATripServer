@@ -39,10 +39,11 @@ WHERE
     AND iv.emailProfilo = '$emailProprietarioTappa'
     and t.codiceViaggio = iv.codiceViaggio 
     and iv.ordineTappa= '$ordineTappa'
-        AND ((iv.livelloCondivisione = 'Private' AND iv.emailProfilo = '$emailProfilo')
-            OR iv.livelloCondivisione = 'Public' 
-            OR (iv.livelloCondivisione = 'Travel' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codiceViaggio))
-            OR (iv.livelloCondivisione = 'Followers' AND '$emailProfilo' in (SELECT seguace FROM takeatrip_db.Following WHERE seguito=iv.emailProfilo)))
+        AND ((iv.livelloCondivisione = '3' AND iv.emailProfilo = '$emailProfilo')
+            OR iv.livelloCondivisione = '0' 
+            OR (iv.livelloCondivisione = '2' AND '$emailProfilo' in (SELECT emailProfilo FROM takeatrip_db.PartePer WHERE codiceViaggio=iv.codiceViaggio))
+            OR (iv.livelloCondivisione = '1' AND (iv.emailProfilo = '$emailProfilo' OR '$emailProfilo' in 
+            	(SELECT seguace FROM takeatrip_db.Following WHERE seguito=iv.emailProfilo))))
 order by timestamp desc");
 
 

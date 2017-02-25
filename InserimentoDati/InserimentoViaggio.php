@@ -54,7 +54,7 @@ if($conn == null){
 $nomeViaggio = $_POST["viaggio"]; 
 $codice = gen_uuid(); 
 $idFoto = '';
-$livelloDefault = 'public';
+$livelloDefault = '0';
 $timestamp = $_POST["timestamp"];
 
 
